@@ -62,7 +62,7 @@ https://www.digitalocean.com/community/tutorials/exec-maven-plugin-run-java-prog
       <dependency>
           <groupId>org.apache.tomcat.embed</groupId>
           <artifactId>tomcat-embed-core</artifactId>
-          <version>8.5.11</version>
+          <version>8.5.63</version>
       </dependency>
       <dependency>
           <groupId>org.json</groupId>
