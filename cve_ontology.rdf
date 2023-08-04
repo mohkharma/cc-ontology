@@ -1,0 +1,219 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://example.org/cve_schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://birzeit.edu/cve_schema5_0#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://birzeit.edu/cve_schema5_0"/>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#CONTAINERS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#METRICS">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#REFERENCES">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#CREDITS">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#CHANGES">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#SOLUTIONS">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#PROVIDER_METADATA">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#VERSIONS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#PROBLEM_TYPES">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#WORKAROUNDS">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#CVE_METADATA">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#TIMELINE">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#SOURCE">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#X_GENERATOR">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#DESCRIPTIONS">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#PROBLEM_TYPES"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/cve_schema5_0#AFFECTED">
+    <rdfs:subClassOf rdf:resource="http://birzeit.edu/cve_schema5_0#CONTAINERS"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#problemTypes"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#metrics"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#credits"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#changes">
+    <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#CHANGES"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#descriptions"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#references"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#timeline"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#source"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#providerMetadata"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#workarounds"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#affected">
+    <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#versions"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#cveMetadata"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#containers">
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#x_generator"/>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/cve_schema5_0#solutions"/>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cpe_vendor">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROVIDER_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROBLEM_TYPES"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cweId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROBLEM_TYPES"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#lessThan">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#datePublished">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#dataType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#dataVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_RECORD"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cpe_version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROVIDER_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#platforms">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#vendor">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#status">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cveId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cpe_match_string">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROVIDER_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#defaultStatus">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#severity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#METRICS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#dateReserved">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#reference_type">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#REFERENCES"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#state">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#reference_tag_name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#REFERENCES"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#versionType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#cpe_lang">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#PROVIDER_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#DESCRIPTIONS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#user">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CREDITS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#type">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CREDITS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#assignerShortName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#reference_data_url">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#REFERENCES"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#lang">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CREDITS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#product">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#AFFECTED"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#VERSIONS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#value">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#METRICS"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://birzeit.edu/cve_schema5_0#assignerOrgId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/cve_schema5_0#CVE_METADATA"/>
+  </owl:DatatypeProperty>
+  <j.0:CVE_RECORD rdf:about="http://birzeit.edu/cve_schema5_0#CVE-2023-0001">
+    <j.0:datePublished>2023-02-08T17:20:20.774Z</j.0:datePublished>
+    <j.0:dateReserved>2022-10-27T18:47:48.958Z</j.0:dateReserved>
+    <j.0:assignerShortName>palo_alto</j.0:assignerShortName>
+    <j.0:state>PUBLISHED</j.0:state>
+    <j.0:assignerOrgId>d6c1279f-00f6-4ef7-9217-f89ffe703ec0</j.0:assignerOrgId>
+    <j.0:cveId>CVE-2023-0001</j.0:cveId>
+  </j.0:CVE_RECORD>
+</rdf:RDF>

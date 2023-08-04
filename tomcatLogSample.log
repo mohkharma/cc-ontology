@@ -1,0 +1,5 @@
+[2023-06-30 10:30:00] [INFOKharma] [Catalina] MOhammed Kharama is a testing, This is an informational log message.
+[2023-06-30 10:30:01] [ERROR] [Catalina_Base] Server Java heap memory exceeded.
+[2023-06-30 10:30:02] [DEBUG] [Catalina] memory swap is critical.
+[2023-06-30 10:30:03] [WARNING] [Catalina_Base] Dropping rate is increased, increase number of instances.
+[2023-06-30 10:30:04] [SEC_ALERT] [Catalina] unauthorized access attempt from 84.66.24.145.

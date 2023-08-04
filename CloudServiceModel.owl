@@ -1,0 +1,534 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="cloud" IRI="http://example.com/cloud#"/>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Application"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Data"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:IaaS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Middleware"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Networking"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:OperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Runtime"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Servers"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:ServiceModel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="cloud:Virtualization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Application"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_AppService"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Data"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Google_AppEngine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Google_Workspace"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Heroku"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Microsoft_Office365"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Middleware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Networking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:OperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Runtime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Salesforce"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Servers"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Storage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="cloud:Virtualization"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="cloud:IaaS"/>
+        <Class abbreviatedIRI="cloud:ServiceModel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+        <Class abbreviatedIRI="cloud:ServiceModel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+        <Class abbreviatedIRI="cloud:ServiceModel"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:IaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_AppService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:IaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_AppEngine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_Workspace"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Heroku"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Microsoft_Office365"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+        <NamedIndividual abbreviatedIRI="cloud:Salesforce"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+        <NamedIndividual abbreviatedIRI="cloud:Networking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+        <NamedIndividual abbreviatedIRI="cloud:Servers"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+        <NamedIndividual abbreviatedIRI="cloud:Storage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:AWS_EC2"/>
+        <NamedIndividual abbreviatedIRI="cloud:Virtualization"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_AppService"/>
+        <NamedIndividual abbreviatedIRI="cloud:Middleware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_AppService"/>
+        <NamedIndividual abbreviatedIRI="cloud:OperatingSystem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_AppService"/>
+        <NamedIndividual abbreviatedIRI="cloud:Runtime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+        <NamedIndividual abbreviatedIRI="cloud:Networking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+        <NamedIndividual abbreviatedIRI="cloud:Servers"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+        <NamedIndividual abbreviatedIRI="cloud:Storage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Azure_VirtualMachines"/>
+        <NamedIndividual abbreviatedIRI="cloud:Virtualization"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_AppEngine"/>
+        <NamedIndividual abbreviatedIRI="cloud:Middleware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_AppEngine"/>
+        <NamedIndividual abbreviatedIRI="cloud:OperatingSystem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_AppEngine"/>
+        <NamedIndividual abbreviatedIRI="cloud:Runtime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_Workspace"/>
+        <NamedIndividual abbreviatedIRI="cloud:Application"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Google_Workspace"/>
+        <NamedIndividual abbreviatedIRI="cloud:Data"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Heroku"/>
+        <NamedIndividual abbreviatedIRI="cloud:Middleware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Heroku"/>
+        <NamedIndividual abbreviatedIRI="cloud:OperatingSystem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Heroku"/>
+        <NamedIndividual abbreviatedIRI="cloud:Runtime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Microsoft_Office365"/>
+        <NamedIndividual abbreviatedIRI="cloud:Application"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Microsoft_Office365"/>
+        <NamedIndividual abbreviatedIRI="cloud:Data"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Salesforce"/>
+        <NamedIndividual abbreviatedIRI="cloud:Application"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <NamedIndividual abbreviatedIRI="cloud:Salesforce"/>
+        <NamedIndividual abbreviatedIRI="cloud:Data"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:IaaS"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:PaaS"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:SaaS"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Application"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Middleware"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Networking"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:OperatingSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Runtime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Servers"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Storage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="cloud:provides"/>
+        <Class abbreviatedIRI="cloud:Virtualization"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:AWS_EC2</AbbreviatedIRI>
+        <Literal>IaaS provider offering networking, storage, servers, and virtualization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:AWS_EC2</AbbreviatedIRI>
+        <Literal>Amazon Web Services (AWS) Elastic Compute Cloud (EC2)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Application</AbbreviatedIRI>
+        <Literal>The application component provided in the Software as a Service (SaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Application</AbbreviatedIRI>
+        <Literal>Application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Azure_AppService</AbbreviatedIRI>
+        <Literal>PaaS provider offering operating system, middleware, and runtime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Azure_AppService</AbbreviatedIRI>
+        <Literal>Microsoft Azure App Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Azure_VirtualMachines</AbbreviatedIRI>
+        <Literal>IaaS provider offering networking, storage, servers, and virtualization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Azure_VirtualMachines</AbbreviatedIRI>
+        <Literal>Microsoft Azure Virtual Machines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Data</AbbreviatedIRI>
+        <Literal>The data component provided in the Software as a Service (SaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Data</AbbreviatedIRI>
+        <Literal>Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Google_AppEngine</AbbreviatedIRI>
+        <Literal>PaaS provider offering operating system, middleware, and runtime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Google_AppEngine</AbbreviatedIRI>
+        <Literal>Google App Engine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Google_Workspace</AbbreviatedIRI>
+        <Literal>SaaS provider offering data and application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Google_Workspace</AbbreviatedIRI>
+        <Literal>Google Workspace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Heroku</AbbreviatedIRI>
+        <Literal>PaaS provider offering operating system, middleware, and runtime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Heroku</AbbreviatedIRI>
+        <Literal>Heroku</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:IaaS</AbbreviatedIRI>
+        <Literal>A cloud service model where the provisioning of virtualized resources (computation, storage, and communication) happens on demand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:IaaS</AbbreviatedIRI>
+        <Literal>Infrastructure as a Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Microsoft_Office365</AbbreviatedIRI>
+        <Literal>SaaS provider offering data and application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Microsoft_Office365</AbbreviatedIRI>
+        <Literal>Microsoft Office 365</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Middleware</AbbreviatedIRI>
+        <Literal>The middleware component provided in the Platform as a Service (PaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Middleware</AbbreviatedIRI>
+        <Literal>Middleware</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Networking</AbbreviatedIRI>
+        <Literal>The networking component provided in the Infrastructure as a Service (IaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Networking</AbbreviatedIRI>
+        <Literal>Networking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:OperatingSystem</AbbreviatedIRI>
+        <Literal>The operating system component provided in the Platform as a Service (PaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:OperatingSystem</AbbreviatedIRI>
+        <Literal>Operating System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:PaaS</AbbreviatedIRI>
+        <Literal>A cloud service model that offers consumers a development platform so they may create and maintain their applications and cloud-specific utilities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:PaaS</AbbreviatedIRI>
+        <Literal>Platform as a Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Runtime</AbbreviatedIRI>
+        <Literal>The runtime component provided in the Platform as a Service (PaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Runtime</AbbreviatedIRI>
+        <Literal>Runtime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:SaaS</AbbreviatedIRI>
+        <Literal>A cloud service model referring to the top level of the cloud stack where applications reside</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:SaaS</AbbreviatedIRI>
+        <Literal>Software as a Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Salesforce</AbbreviatedIRI>
+        <Literal>SaaS provider offering data and application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Salesforce</AbbreviatedIRI>
+        <Literal>Salesforce</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Servers</AbbreviatedIRI>
+        <Literal>The servers component provided in the Infrastructure as a Service (IaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Servers</AbbreviatedIRI>
+        <Literal>Servers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:ServiceModel</AbbreviatedIRI>
+        <Literal>The base class for different cloud service models</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:ServiceModel</AbbreviatedIRI>
+        <Literal>Service Model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Storage</AbbreviatedIRI>
+        <Literal>The storage component provided in the Infrastructure as a Service (IaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Storage</AbbreviatedIRI>
+        <Literal>Storage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cloud:Virtualization</AbbreviatedIRI>
+        <Literal>The virtualization component provided in the Infrastructure as a Service (IaaS) model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:Virtualization</AbbreviatedIRI>
+        <Literal>Virtualization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cloud:provides</AbbreviatedIRI>
+        <Literal>provides</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

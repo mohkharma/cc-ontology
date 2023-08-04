@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://birzeit.edu/logging_schema#"
+     xml:base="http://birzeit.edu/logging_schema"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://birzeit.edu/logging_schema#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- xsd:dateTime -->
+
+    <rdfs:Datatype rdf:about="xsd:dateTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#hasLevel -->
+
+    <owl:ObjectProperty rdf:about="http://birzeit.edu/logging_schema#hasLevel">
+        <rdfs:domain rdf:resource="http://birzeit.edu/logging_schema#LogEntry"/>
+        <rdfs:range rdf:resource="http://birzeit.edu/logging_schema#LogLevel"/>
+        <rdfs:comment>Relates a log entry to its log level.</rdfs:comment>
+        <rdfs:label>hasLevel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#hasLogger -->
+
+    <owl:ObjectProperty rdf:about="http://birzeit.edu/logging_schema#hasLogger">
+        <rdfs:domain rdf:resource="http://birzeit.edu/logging_schema#LogEntry"/>
+        <rdfs:range rdf:resource="http://birzeit.edu/logging_schema#Logger"/>
+        <rdfs:comment>Relates a log entry to its logger.</rdfs:comment>
+        <rdfs:label>hasLogger</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#hasMessage -->
+
+    <owl:DatatypeProperty rdf:about="http://birzeit.edu/logging_schema#hasMessage">
+        <rdfs:domain rdf:resource="http://birzeit.edu/logging_schema#LogEntry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#hasTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://birzeit.edu/logging_schema#hasTimestamp">
+        <rdfs:domain rdf:resource="http://birzeit.edu/logging_schema#LogEntry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#LogEntry -->
+
+    <owl:Class rdf:about="http://birzeit.edu/logging_schema#LogEntry">
+        <rdfs:comment>Represents a log entry in Apache Tomcat logging.</rdfs:comment>
+        <rdfs:label>LogEntry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#LogLevel -->
+
+    <owl:Class rdf:about="http://birzeit.edu/logging_schema#LogLevel">
+        <rdfs:comment>Represents the log level in Apache Tomcat logging.</rdfs:comment>
+        <rdfs:label>LogLevel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#Logger -->
+
+    <owl:Class rdf:about="http://birzeit.edu/logging_schema#Logger">
+        <rdfs:comment>Represents a logger in Apache Tomcat logging.</rdfs:comment>
+        <rdfs:label>Logger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#catalinaLogger -->
+
+    <owl:NamedIndividual rdf:about="http://birzeit.edu/logging_schema#catalinaLogger">
+        <rdf:type rdf:resource="http://birzeit.edu/logging_schema#Logger"/>
+        <rdfs:comment>Represents the Catalina logger.</rdfs:comment>
+        <rdfs:label>Catalina Logger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#info -->
+
+    <owl:NamedIndividual rdf:about="http://birzeit.edu/logging_schema#info">
+        <rdf:type rdf:resource="http://birzeit.edu/logging_schema#LogLevel"/>
+        <rdfs:comment>Represents the info log level.</rdfs:comment>
+        <rdfs:label>Info</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://birzeit.edu/logging_schema#logEntry1 -->
+
+    <owl:NamedIndividual rdf:about="http://birzeit.edu/logging_schema#logEntry1">
+        <rdf:type rdf:resource="http://birzeit.edu/logging_schema#LogEntry"/>
+        <hasLevel rdf:resource="http://birzeit.edu/logging_schema#info"/>
+        <hasLogger rdf:resource="http://birzeit.edu/logging_schema#catalinaLogger"/>
+        <hasMessage>This is an informational log message.</hasMessage>
+        <hasTimestamp rdf:datatype="xsd:dateTime">2023-06-30T10:30:00</hasTimestamp>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

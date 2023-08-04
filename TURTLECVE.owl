@@ -1,0 +1,261 @@
+@prefix :              <http://birzeit.edu/CC#> .
+@prefix cc:            <http://birzeit.edu/CC#> .
+@prefix cloud:         <http://example.com/cloud#> .
+@prefix cve_schema5_0: <http://birzeit.edu/cve_schema5_0#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+
+cve_schema5_0:CVE_CVE-2019-5736
+        rdf:type  cve_schema5_0:CVE .
+
+cve_schema5_0:CVE_CVE-2019-6003
+        rdf:type                      cve_schema5_0:CVE ;
+        cve_schema5_0:assignerShortName
+                "jpcert" ;
+        cve_schema5_0:cveId           "CVE-2019-6003" ;
+        cve_schema5_0:datePublished   "2019-09-12T15:58:55" ;
+        cve_schema5_0:dateReserved    "2019-01-10T00:00:00" ;
+        cve_schema5_0:hasDetailsFrom  cve_schema5_0:CVEInformationSource_CVE-2019-6003 ;
+        cve_schema5_0:hasOrgId        "ede6fdc4-6654-4307-a26d-3331c018e2ce" ;
+        cve_schema5_0:status          "PUBLISHED" .
+
+cc:ServiceComponent  rdf:type  owl:Class ;
+        owl:equivalentClass  cve_schema5_0:Product .
+
+cve_schema5_0:CWE_CWE-319
+        rdf:type                   cve_schema5_0:CWE ;
+        cve_schema5_0:cweId        "CWE-319" ;
+        cve_schema5_0:description  "CWE-319 Cleartext Transmission of Sensitive Information" .
+
+cloud:SaaS  rdf:type     owl:Class ;
+        rdfs:comment     "A cloud service model referring to the top level of the cloud stack where applications reside" ;
+        rdfs:label       "Software as a Service" ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+<http://birzeit.edu/CC>
+        rdf:type     owl:Ontology ;
+        owl:imports  <file:///C:/M.kharma_data/PhD/04-Fall-Semester-2023/Dataengineering/cc-ontology/CVE_OntologyV7.owl> .
+
+cve_schema5_0:Product_CortexXDRagent
+        rdf:type                  cve_schema5_0:Product ;
+        cve_schema5_0:affectedProductStatus
+                "unaffected" ;
+        cve_schema5_0:hasVendor   cve_schema5_0:ProductVendor_PaloAltoNetworks ;
+        cve_schema5_0:hasVersion  "7.9 All" .
+
+cve_schema5_0:CWE_CWE-79
+        rdf:type                   cve_schema5_0:CWE ;
+        cve_schema5_0:cweId        "CWE-79" ;
+        cve_schema5_0:description  "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')" .
+
+<http://dbpedia.org/ontology/company>
+        rdf:type  owl:Class .
+
+cve_schema5_0:ProductVendor_Microsoft
+        rdf:type  cve_schema5_0:ProductVendor .
+
+cc:CloudProvider_Microsoft
+        rdf:type         cc:CloudProvider ;
+        cc:offerService  cloud:PaaS_MicrosoftAzureKubernetesService ;
+        owl:sameAs       cve_schema5_0:ProductVendor_Microsoft .
+
+<http://birzeit.edu/cve_schema5_0#ProductVendor_LTD.>
+        rdf:type  cve_schema5_0:ProductVendor .
+
+cc:componentImpactedByCVE
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  cc:ServiceComponent ;
+        rdfs:range   cve_schema5_0:CVE .
+
+cloud:IaaS  rdf:type     owl:Class ;
+        rdfs:comment     "A cloud service model where the provisioning of virtualized resources (computation, storage, and communication) happens on demand" ;
+        rdfs:label       "Infrastructure as a Service" ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+cloud:PaaS_MicrosoftAzureKubernetesService
+        rdf:type         cloud:PaaS ;
+        cc:hasComponent  cc:ServiceComponent_Docker , cc:ServiceComponent_MicrosoftAzureKubernetesService .
+
+cve_schema5_0:CVEInformationSource_CVE-2019-6146
+        rdf:type                      cve_schema5_0:CVEInformationSource ;
+        cve_schema5_0:hasAffectedProduct
+                cve_schema5_0:Product_ForcepointWebSecurity ;
+        cve_schema5_0:hasCWE          cve_schema5_0:CWE_CWE-79 ;
+        cve_schema5_0:hasDescription  "It has been reported that cross-site scripting (XSS) is possible in Forcepoint Web Security, version 8.x, via host header injection. CVSSv3.0: 5.3 (Medium) (/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N)" ;
+        cve_schema5_0:hasPlatform     cve_schema5_0:Platform_Centos ;
+        cve_schema5_0:hasReference    "http://packetstormsecurity.com/files/156274/Forcepoint-WebSecurity-8.5-Cross-Site-Scripting.html" .
+
+cc:Function_as_a_Service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+cc:CloudProvider  rdf:type   owl:Class ;
+        rdfs:subClassOf      <http://dbpedia.org/ontology/company> ;
+        owl:equivalentClass  cve_schema5_0:ProductVendor .
+
+cc:hasComponent  rdf:type   owl:ObjectProperty ;
+        rdfs:domain         cloud:SaaS , cloud:PaaS , cloud:IaaS , cc:Function_as_a_Service , cc:Desktop_as_a_service , cc:Communication_as_a_service ;
+        rdfs:range          cc:ServiceComponent ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+cve_schema5_0:Platform_CentosWindows
+        rdf:type               cve_schema5_0:Platform ;
+        cve_schema5_0:hasName  "CentosWindows" .
+
+cve_schema5_0:Product_EC-CUBEpluginAmazonPayPlugin2.122.13
+        rdf:type                  cve_schema5_0:Product ;
+        cve_schema5_0:hasVendor   <http://birzeit.edu/cve_schema5_0#ProductVendor_LTD.> ;
+        cve_schema5_0:hasVersion  "version 2.4.2 and earlier" .
+
+cloud:Application  rdf:type  owl:Class .
+
+cve_schema5_0:Product_ForcepointWebSecurity
+        rdf:type                  cve_schema5_0:Product ;
+        cve_schema5_0:hasVendor   cve_schema5_0:ProductVendor_na ;
+        cve_schema5_0:hasVersion  "8.5, 8.4" .
+
+cve_schema5_0:Contributer_CVE-2023-0001
+        rdf:type                        cve_schema5_0:Contributer ;
+        cve_schema5_0:contributionDesc  "Palo Alto Networks thanks Robert McCallum (M42D) for discovering and reporting this issue." ;
+        cve_schema5_0:contributionType  "finder" ;
+        cve_schema5_0:lang              "en" ;
+        cve_schema5_0:user              "00000000-0000-4000-9000-000000000000" .
+
+cloud:OperatingSystem
+        rdf:type  owl:Class .
+
+cve_schema5_0:Product_Docker
+        rdf:type  cve_schema5_0:Product .
+
+cloud:PaaS  rdf:type     owl:Class ;
+        rdfs:comment     "A cloud service model that offers consumers a development platform so they may create and maintain their applications and cloud-specific utilities" ;
+        rdfs:label       "Platform as a Service" ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+cc:OfferServices  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  cc:CloudProvider ;
+        rdfs:label   "offerService" ;
+        rdfs:range   cloud:ServiceModel .
+
+cve_schema5_0:Platform_Centos
+        rdf:type               cve_schema5_0:Platform ;
+        cve_schema5_0:hasName  "Centos" .
+
+cloud:Networking  rdf:type  owl:Class .
+
+cve_schema5_0:ProductVendor_na
+        rdf:type  cve_schema5_0:ProductVendor .
+
+cloud:Runtime  rdf:type  owl:Class .
+
+cloud:Virtualization  rdf:type  owl:Class .
+
+cve_schema5_0:CVEInformationSource_CVE-2023-0001
+        rdf:type                      cve_schema5_0:CVEInformationSource ;
+        cve_schema5_0:hasAffectedProduct
+                cve_schema5_0:Product_CortexXDRagent ;
+        cve_schema5_0:hasCWE          cve_schema5_0:CWE_CWE-319 ;
+        cve_schema5_0:hasContributer  cve_schema5_0:Contributer_CVE-2023-0001 ;
+        cve_schema5_0:hasDescription  "An information exposure vulnerability in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local system administrator to disclose the admin password for the agent in cleartext, which bad actors can then use to execute privileged cytool commands that disable or uninstall the agent." ;
+        cve_schema5_0:hasMetrix       cve_schema5_0:Metric_CVE-2023-0001 ;
+        cve_schema5_0:hasPlatform     cve_schema5_0:Platform_CentosWindows ;
+        cve_schema5_0:hasReference    "https://security.paloaltonetworks.com/CVE-2023-0001" ;
+        cve_schema5_0:hasSolution     "This issue is fixed in Cortex XDR agent 7.5.101-CE and all later supported Cortex XDR agent versions. (Cortex XDR agent 5.0 is not impacted.)\n\nAfter you upgrade to a fixed version of the Cortex XDR agent, you must change the agent admin password in case it was already disclosed to users." ;
+        cve_schema5_0:hasWorkaround   "There are no known workarounds for this issue." .
+
+cve_schema5_0:ProductVendor_PaloAltoNetworks
+        rdf:type  cve_schema5_0:ProductVendor .
+
+cc:Communication_as_a_service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+cloud:provides  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  cloud:SaaS , cloud:PaaS , cloud:IaaS , cloud:ServiceModel ;
+        rdfs:label   "provides" ;
+        rdfs:range   cloud:Servers , cloud:Application , cloud:Networking , cloud:Data , cloud:Virtualization , cloud:Middleware , cloud:OperatingSystem , cloud:Storage , cloud:Runtime .
+
+cve_schema5_0:CVEInformationSource_CVE-2019-6003
+        rdf:type                      cve_schema5_0:CVEInformationSource ;
+        cve_schema5_0:hasAffectedProduct
+                cve_schema5_0:Product_EC-CUBEpluginAmazonPayPlugin2.122.13 ;
+        cve_schema5_0:hasDescription  "Cross-site scripting vulnerability in EC-CUBE plugin 'Amazon Pay Plugin 2.12,2.13' version 2.4.2 and earlier allows remote attackers to inject arbitrary web script or HTML via unspecified vectors." ;
+        cve_schema5_0:hasPlatform     cve_schema5_0:Platform_Centos ;
+        cve_schema5_0:hasReference    "https://www.ec-cube.net/products/detail.php?product_id=1602" .
+
+cve_schema5_0:CVE_CVE-2021-24109
+        rdf:type  cve_schema5_0:CVE .
+
+cve_schema5_0:Product_MicrosoftAzureKubernetesService
+        rdf:type  cve_schema5_0:Product .
+
+owl:topObjectProperty
+        rdfs:domain  cc:ServiceComponent ;
+        rdfs:range   cve_schema5_0:CVE .
+
+cve_schema5_0:CVE_CVE-2019-6146
+        rdf:type                      cve_schema5_0:CVE ;
+        cve_schema5_0:assignerShortName
+                "forcepoint" ;
+        cve_schema5_0:cveId           "CVE-2019-6146" ;
+        cve_schema5_0:datePublished   "2020-01-22T16:10:21" ;
+        cve_schema5_0:dateReserved    "2019-01-11T00:00:00" ;
+        cve_schema5_0:hasDetailsFrom  cve_schema5_0:CVEInformationSource_CVE-2019-6146 ;
+        cve_schema5_0:hasOrgId        "e23ea22c-8c39-4eff-8980-2881e5ae54e2" ;
+        cve_schema5_0:status          "PUBLISHED" .
+
+cloud:Data  rdf:type  owl:Class .
+
+cc:ServiceComponent_MicrosoftAzureKubernetesService
+        rdf:type                   cc:ServiceComponent ;
+        cc:componentImpactedByCVE  cve_schema5_0:CVE_CVE-2021-24109 ;
+        owl:sameAs                 cve_schema5_0:Product_MicrosoftAzureKubernetesService .
+
+cve_schema5_0:Metric_CVE-2023-0001
+        rdf:type                        cve_schema5_0:Metric ;
+        cve_schema5_0:attackComplexity  "LOW" ;
+        cve_schema5_0:attackVector      "LOCAL" ;
+        cve_schema5_0:availabilityImpact
+                "HIGH" ;
+        cve_schema5_0:baseScore         "6" ;
+        cve_schema5_0:baseSeverity      "MEDIUM" ;
+        cve_schema5_0:confidentialityImpact
+                "HIGH" ;
+        cve_schema5_0:format            "CVSS" ;
+        cve_schema5_0:integrityImpact   "NONE" ;
+        cve_schema5_0:privilegesRequired
+                "HIGH" ;
+        cve_schema5_0:scope             "UNCHANGED" ;
+        cve_schema5_0:userInteraction   "NONE" .
+
+cc:Desktop_as_a_service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+cloud:Servers  rdf:type  owl:Class .
+
+cloud:ServiceModel  rdf:type  owl:Class ;
+        rdfs:comment  "The base class for different cloud service models" ;
+        rdfs:label    "Service Model" .
+
+cloud:Middleware  rdf:type  owl:Class .
+
+cloud:Storage  rdf:type  owl:Class .
+
+cve_schema5_0:CVE_CVE-2023-0001
+        rdf:type                      cve_schema5_0:CVE ;
+        cve_schema5_0:assignerShortName
+                "palo_alto" ;
+        cve_schema5_0:cveId           "CVE-2023-0001" ;
+        cve_schema5_0:datePublished   "2023-02-08T17:20:20.774Z" ;
+        cve_schema5_0:dateReserved    "2022-10-27T18:47:48.958Z" ;
+        cve_schema5_0:hasDetailsFrom  cve_schema5_0:CVEInformationSource_CVE-2023-0001 ;
+        cve_schema5_0:hasOrgId        "d6c1279f-00f6-4ef7-9217-f89ffe703ec0" ;
+        cve_schema5_0:status          "PUBLISHED" .
+
+cc:ServiceComponent_Docker
+        rdf:type                   cc:ServiceComponent ;
+        cc:componentImpactedByCVE  cve_schema5_0:CVE_CVE-2019-5736 ;
+        owl:sameAs                 cve_schema5_0:Product_Docker .

@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://example.com/logging-ontology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://example.com/logging-ontology#">
+    <Prefix name="log" IRI="http://example.com/logging-ontology#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ontology for representing logging file data</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Logging File Data Ontology</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="Context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="EventData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LogEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasEventParameter"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasEventType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMessage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasRequestID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasSeverity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasUserID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="logEntry6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="sourceComponent_microservice3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="sourceComponent_microservice4"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LogEntry"/>
+        <NamedIndividual IRI="logEntry6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Source"/>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Source"/>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Source"/>
+        <NamedIndividual IRI="sourceComponent_microservice3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Source"/>
+        <NamedIndividual IRI="sourceComponent_microservice4"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <NamedIndividual IRI="sourceComponent_microservice3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <NamedIndividual IRI="sourceComponent_microservice4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="generatedBy"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <Literal>User logged in successfully</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <Literal>123456</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <Literal>INFO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T09:30:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry1"/>
+        <Literal>user123</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <Literal>Invalid input detected</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <Literal>987654</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <Literal>ERROR</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T10:15:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry2"/>
+        <Literal>user456</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <Literal>Disk space running low</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <Literal>654321</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <Literal>WARNING</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T11:00:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry3"/>
+        <Literal>user789</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <Literal>Data import completed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <Literal>246810</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <Literal>INFO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T11:30:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry4"/>
+        <Literal>user246</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <Literal>Database connection lost</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <Literal>13579</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <Literal>ERROR</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T12:00:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry5"/>
+        <Literal>user987</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasMessage"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <Literal>User registration completed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasRequestID"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <Literal>86420</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasSeverity"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <Literal>INFO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasTimestamp"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-14T13:15:00Z</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasUserID"/>
+        <NamedIndividual IRI="logEntry6"/>
+        <Literal>user543</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventParameter"/>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+        <Literal>Username: john.doe</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventType"/>
+        <NamedIndividual IRI="sourceComponent_microservice1"/>
+        <Literal>Authentication</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventParameter"/>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+        <Literal>Invalid Field: Email</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventType"/>
+        <NamedIndividual IRI="sourceComponent_microservice2"/>
+        <Literal>Data Validation</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventParameter"/>
+        <NamedIndividual IRI="sourceComponent_microservice3"/>
+        <Literal>Disk Usage: 85%</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventType"/>
+        <NamedIndividual IRI="sourceComponent_microservice3"/>
+        <Literal>System Health</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventParameter"/>
+        <NamedIndividual IRI="sourceComponent_microservice4"/>
+        <Literal>File Name: data.csv</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="hasEventType"/>
+        <NamedIndividual IRI="sourceComponent_microservice4"/>
+        <Literal>Data Import</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="generatedBy"/>
+        <Class IRI="LogEntry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="generatedBy"/>
+        <Class IRI="Source"/>
+    </ObjectPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasEventParameter"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasEventType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMessage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasRequestID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasSeverity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasTimestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasUserID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Context</IRI>
+        <Literal>Represents the context of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Context</IRI>
+        <Literal>Context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Environment</IRI>
+        <Literal>Represents the environment information of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Environment</IRI>
+        <Literal>Environment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>EventData</IRI>
+        <Literal>Represents the data associated with a log event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>EventData</IRI>
+        <Literal>Event Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>LogEntry</IRI>
+        <Literal>Represents a log entry in the logging file</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>LogEntry</IRI>
+        <Literal>Log Entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Source</IRI>
+        <Literal>Represents the source of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Source</IRI>
+        <Literal>Source</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatedBy</IRI>
+        <Literal>Specifies the source component that generated the log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatedBy</IRI>
+        <Literal>generatedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasEventParameter</IRI>
+        <Literal>Specifies the event parameter of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasEventParameter</IRI>
+        <Literal>hasEventParameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasEventType</IRI>
+        <Literal>Specifies the event type of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasEventType</IRI>
+        <Literal>hasEventType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasMessage</IRI>
+        <Literal>Specifies the message of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasMessage</IRI>
+        <Literal>hasMessage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasRequestID</IRI>
+        <Literal>Specifies the request ID associated with the log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasRequestID</IRI>
+        <Literal>hasRequestID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasSeverity</IRI>
+        <Literal>Specifies the severity of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSeverity</IRI>
+        <Literal>hasSeverity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasTimestamp</IRI>
+        <Literal>Specifies the timestamp of a log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasTimestamp</IRI>
+        <Literal>hasTimestamp</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasUserID</IRI>
+        <Literal>Specifies the user ID associated with the log entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasUserID</IRI>
+        <Literal>hasUserID</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

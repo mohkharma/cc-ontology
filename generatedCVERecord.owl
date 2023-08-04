@@ -1,0 +1,253 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:cc="http://birzeit.edu/CC#"
+    xmlns:cve_schema5_0="http://birzeit.edu/cve_schema5_0#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:cloud="http://example.com/cloud#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://birzeit.edu/CC">
+    <owl:imports rdf:resource="file:///C:/M.kharma_data/PhD/04-Fall-Semester-2023/Dataengineering/cc-ontology/CVE_OntologyV7.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://example.com/cloud#Servers"/>
+  <owl:Class rdf:about="http://example.com/cloud#IaaS">
+    <rdfs:label>Infrastructure as a Service</rdfs:label>
+    <rdfs:comment>A cloud service model where the provisioning of virtualized resources (computation, storage, and communication) happens on demand</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://example.com/cloud#ServiceModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/CC#Communication_as_a_service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://example.com/cloud#ServiceModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.com/cloud#Middleware"/>
+  <owl:Class rdf:about="http://example.com/cloud#Networking"/>
+  <owl:Class rdf:about="http://example.com/cloud#Virtualization"/>
+  <owl:Class rdf:about="http://example.com/cloud#Runtime"/>
+  <owl:Class rdf:about="http://example.com/cloud#PaaS">
+    <rdfs:label>Platform as a Service</rdfs:label>
+    <rdfs:comment>A cloud service model that offers consumers a development platform so they may create and maintain their applications and cloud-specific utilities</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://example.com/cloud#ServiceModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://dbpedia.org/ontology/company"/>
+  <owl:Class rdf:about="http://example.com/cloud#Storage"/>
+  <owl:Class rdf:about="http://example.com/cloud#OperatingSystem"/>
+  <owl:Class rdf:about="http://birzeit.edu/CC#Function_as_a_Service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://example.com/cloud#ServiceModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/CC#Desktop_as_a_service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://example.com/cloud#ServiceModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://birzeit.edu/CC#CloudProvider">
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/company"/>
+    <owl:equivalentClass rdf:resource="http://birzeit.edu/cve_schema5_0#ProductVendor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.com/cloud#Data"/>
+  <owl:Class rdf:about="http://example.com/cloud#ServiceModel">
+    <rdfs:label>Service Model</rdfs:label>
+    <rdfs:comment>The base class for different cloud service models</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.com/cloud#Application"/>
+  <owl:Class rdf:about="http://birzeit.edu/CC#ServiceComponent">
+    <owl:equivalentClass rdf:resource="http://birzeit.edu/cve_schema5_0#Product"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.com/cloud#SaaS">
+    <rdfs:label>Software as a Service</rdfs:label>
+    <rdfs:comment>A cloud service model referring to the top level of the cloud stack where applications reside</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#OfferServices">
+    <rdfs:label>offerService</rdfs:label>
+    <rdfs:range rdf:resource="http://example.com/cloud#ServiceModel"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/CC#CloudProvider"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#hasComponent">
+    <rdfs:range rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#SaaS"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#PaaS"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#IaaS"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/CC#Function_as_a_Service"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/CC#Desktop_as_a_service"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/CC#Communication_as_a_service"/>
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#CVE"/>
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.com/cloud#provides">
+    <rdfs:domain rdf:resource="http://example.com/cloud#SaaS"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Servers"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#PaaS"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#IaaS"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Application"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Networking"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Data"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Virtualization"/>
+    <rdfs:domain rdf:resource="http://example.com/cloud#ServiceModel"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Middleware"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#OperatingSystem"/>
+    <rdfs:label>provides</rdfs:label>
+    <rdfs:range rdf:resource="http://example.com/cloud#Storage"/>
+    <rdfs:range rdf:resource="http://example.com/cloud#Runtime"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#componentImpactedByCVE">
+    <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#CVE"/>
+    <rdfs:domain rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+  </owl:ObjectProperty>
+  <cve_schema5_0:CVE rdf:about="http://birzeit.edu/cve_schema5_0#CVE_CVE-2019-6003">
+    <cve_schema5_0:hasDetailsFrom>
+      <cve_schema5_0:CVEInformationSource rdf:about="http://birzeit.edu/cve_schema5_0#CVEInformationSource_CVE-2019-6003">
+        <cve_schema5_0:hasReference>https://www.ec-cube.net/products/detail.php?product_id=1602</cve_schema5_0:hasReference>
+        <cve_schema5_0:hasDescription>Cross-site scripting vulnerability in EC-CUBE plugin 'Amazon Pay Plugin 2.12,2.13' version 2.4.2 and earlier allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.</cve_schema5_0:hasDescription>
+        <cve_schema5_0:hasPlatform>
+          <cve_schema5_0:Platform rdf:about="http://birzeit.edu/cve_schema5_0#Platform_Centos">
+            <cve_schema5_0:hasName>Centos</cve_schema5_0:hasName>
+          </cve_schema5_0:Platform>
+        </cve_schema5_0:hasPlatform>
+        <cve_schema5_0:hasAffectedProduct>
+          <cve_schema5_0:Product rdf:about="http://birzeit.edu/cve_schema5_0#Product_EC-CUBEpluginAmazonPayPlugin2.122.13">
+            <cve_schema5_0:hasVersion>version 2.4.2 and earlier</cve_schema5_0:hasVersion>
+            <cve_schema5_0:hasVendor>
+              <cve_schema5_0:ProductVendor rdf:about="http://birzeit.edu/cve_schema5_0#ProductVendor_LTD."/>
+            </cve_schema5_0:hasVendor>
+          </cve_schema5_0:Product>
+        </cve_schema5_0:hasAffectedProduct>
+      </cve_schema5_0:CVEInformationSource>
+    </cve_schema5_0:hasDetailsFrom>
+    <cve_schema5_0:datePublished>2019-09-12T15:58:55</cve_schema5_0:datePublished>
+    <cve_schema5_0:dateReserved>2019-01-10T00:00:00</cve_schema5_0:dateReserved>
+    <cve_schema5_0:assignerShortName>jpcert</cve_schema5_0:assignerShortName>
+    <cve_schema5_0:status>PUBLISHED</cve_schema5_0:status>
+    <cve_schema5_0:hasOrgId>ede6fdc4-6654-4307-a26d-3331c018e2ce</cve_schema5_0:hasOrgId>
+    <cve_schema5_0:cveId>CVE-2019-6003</cve_schema5_0:cveId>
+  </cve_schema5_0:CVE>
+  <cve_schema5_0:CVE rdf:about="http://birzeit.edu/cve_schema5_0#CVE_CVE-2023-0001">
+    <cve_schema5_0:hasDetailsFrom>
+      <cve_schema5_0:CVEInformationSource rdf:about="http://birzeit.edu/cve_schema5_0#CVEInformationSource_CVE-2023-0001">
+        <cve_schema5_0:hasReference>https://security.paloaltonetworks.com/CVE-2023-0001</cve_schema5_0:hasReference>
+        <cve_schema5_0:hasDescription>An information exposure vulnerability in the Palo Alto Networks Cortex XDR agent on Windows devices allows a local system administrator to disclose the admin password for the agent in cleartext, which bad actors can then use to execute privileged cytool commands that disable or uninstall the agent.</cve_schema5_0:hasDescription>
+        <cve_schema5_0:hasCWE>
+          <cve_schema5_0:CWE rdf:about="http://birzeit.edu/cve_schema5_0#CWE_CWE-319">
+            <cve_schema5_0:description>CWE-319 Cleartext Transmission of Sensitive Information</cve_schema5_0:description>
+            <cve_schema5_0:cweId>CWE-319</cve_schema5_0:cweId>
+          </cve_schema5_0:CWE>
+        </cve_schema5_0:hasCWE>
+        <cve_schema5_0:hasAffectedProduct>
+          <cve_schema5_0:Product rdf:about="http://birzeit.edu/cve_schema5_0#Product_CortexXDRagent">
+            <cve_schema5_0:hasVersion>7.9 All</cve_schema5_0:hasVersion>
+            <cve_schema5_0:hasVendor>
+              <cve_schema5_0:ProductVendor rdf:about="http://birzeit.edu/cve_schema5_0#ProductVendor_PaloAltoNetworks"/>
+            </cve_schema5_0:hasVendor>
+            <cve_schema5_0:affectedProductStatus>unaffected</cve_schema5_0:affectedProductStatus>
+          </cve_schema5_0:Product>
+        </cve_schema5_0:hasAffectedProduct>
+        <cve_schema5_0:hasSolution>This issue is fixed in Cortex XDR agent 7.5.101-CE and all later supported Cortex XDR agent versions. (Cortex XDR agent 5.0 is not impacted.)
+
+After you upgrade to a fixed version of the Cortex XDR agent, you must change the agent admin password in case it was already disclosed to users.</cve_schema5_0:hasSolution>
+        <cve_schema5_0:hasContributer>
+          <cve_schema5_0:Contributer rdf:about="http://birzeit.edu/cve_schema5_0#Contributer_CVE-2023-0001">
+            <cve_schema5_0:contributionDesc>Palo Alto Networks thanks Robert McCallum (M42D) for discovering and reporting this issue.</cve_schema5_0:contributionDesc>
+            <cve_schema5_0:user>00000000-0000-4000-9000-000000000000</cve_schema5_0:user>
+            <cve_schema5_0:contributionType>finder</cve_schema5_0:contributionType>
+            <cve_schema5_0:lang>en</cve_schema5_0:lang>
+          </cve_schema5_0:Contributer>
+        </cve_schema5_0:hasContributer>
+        <cve_schema5_0:hasMetrix>
+          <cve_schema5_0:Metric rdf:about="http://birzeit.edu/cve_schema5_0#Metric_CVE-2023-0001">
+            <cve_schema5_0:attackVector>LOCAL</cve_schema5_0:attackVector>
+            <cve_schema5_0:format>CVSS</cve_schema5_0:format>
+            <cve_schema5_0:attackComplexity>LOW</cve_schema5_0:attackComplexity>
+            <cve_schema5_0:confidentialityImpact>HIGH</cve_schema5_0:confidentialityImpact>
+            <cve_schema5_0:userInteraction>NONE</cve_schema5_0:userInteraction>
+            <cve_schema5_0:privilegesRequired>HIGH</cve_schema5_0:privilegesRequired>
+            <cve_schema5_0:scope>UNCHANGED</cve_schema5_0:scope>
+            <cve_schema5_0:integrityImpact>NONE</cve_schema5_0:integrityImpact>
+            <cve_schema5_0:baseSeverity>MEDIUM</cve_schema5_0:baseSeverity>
+            <cve_schema5_0:baseScore>6</cve_schema5_0:baseScore>
+            <cve_schema5_0:availabilityImpact>HIGH</cve_schema5_0:availabilityImpact>
+          </cve_schema5_0:Metric>
+        </cve_schema5_0:hasMetrix>
+        <cve_schema5_0:hasPlatform>
+          <cve_schema5_0:Platform rdf:about="http://birzeit.edu/cve_schema5_0#Platform_CentosWindows">
+            <cve_schema5_0:hasName>CentosWindows</cve_schema5_0:hasName>
+          </cve_schema5_0:Platform>
+        </cve_schema5_0:hasPlatform>
+        <cve_schema5_0:hasWorkaround>There are no known workarounds for this issue.</cve_schema5_0:hasWorkaround>
+      </cve_schema5_0:CVEInformationSource>
+    </cve_schema5_0:hasDetailsFrom>
+    <cve_schema5_0:datePublished>2023-02-08T17:20:20.774Z</cve_schema5_0:datePublished>
+    <cve_schema5_0:dateReserved>2022-10-27T18:47:48.958Z</cve_schema5_0:dateReserved>
+    <cve_schema5_0:assignerShortName>palo_alto</cve_schema5_0:assignerShortName>
+    <cve_schema5_0:status>PUBLISHED</cve_schema5_0:status>
+    <cve_schema5_0:hasOrgId>d6c1279f-00f6-4ef7-9217-f89ffe703ec0</cve_schema5_0:hasOrgId>
+    <cve_schema5_0:cveId>CVE-2023-0001</cve_schema5_0:cveId>
+  </cve_schema5_0:CVE>
+  <cve_schema5_0:CVE rdf:about="http://birzeit.edu/cve_schema5_0#CVE_CVE-2019-6146">
+    <cve_schema5_0:hasDetailsFrom>
+      <cve_schema5_0:CVEInformationSource rdf:about="http://birzeit.edu/cve_schema5_0#CVEInformationSource_CVE-2019-6146">
+        <cve_schema5_0:hasReference>http://packetstormsecurity.com/files/156274/Forcepoint-WebSecurity-8.5-Cross-Site-Scripting.html</cve_schema5_0:hasReference>
+        <cve_schema5_0:hasCWE>
+          <cve_schema5_0:CWE rdf:about="http://birzeit.edu/cve_schema5_0#CWE_CWE-79">
+            <cve_schema5_0:description>CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</cve_schema5_0:description>
+            <cve_schema5_0:cweId>CWE-79</cve_schema5_0:cweId>
+          </cve_schema5_0:CWE>
+        </cve_schema5_0:hasCWE>
+        <cve_schema5_0:hasDescription>It has been reported that cross-site scripting (XSS) is possible in Forcepoint Web Security, version 8.x, via host header injection. CVSSv3.0: 5.3 (Medium) (/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N)</cve_schema5_0:hasDescription>
+        <cve_schema5_0:hasPlatform rdf:resource="http://birzeit.edu/cve_schema5_0#Platform_Centos"/>
+        <cve_schema5_0:hasAffectedProduct>
+          <cve_schema5_0:Product rdf:about="http://birzeit.edu/cve_schema5_0#Product_ForcepointWebSecurity">
+            <cve_schema5_0:hasVersion>8.5, 8.4</cve_schema5_0:hasVersion>
+            <cve_schema5_0:hasVendor>
+              <cve_schema5_0:ProductVendor rdf:about="http://birzeit.edu/cve_schema5_0#ProductVendor_na"/>
+            </cve_schema5_0:hasVendor>
+          </cve_schema5_0:Product>
+        </cve_schema5_0:hasAffectedProduct>
+      </cve_schema5_0:CVEInformationSource>
+    </cve_schema5_0:hasDetailsFrom>
+    <cve_schema5_0:datePublished>2020-01-22T16:10:21</cve_schema5_0:datePublished>
+    <cve_schema5_0:dateReserved>2019-01-11T00:00:00</cve_schema5_0:dateReserved>
+    <cve_schema5_0:assignerShortName>forcepoint</cve_schema5_0:assignerShortName>
+    <cve_schema5_0:status>PUBLISHED</cve_schema5_0:status>
+    <cve_schema5_0:hasOrgId>e23ea22c-8c39-4eff-8980-2881e5ae54e2</cve_schema5_0:hasOrgId>
+    <cve_schema5_0:cveId>CVE-2019-6146</cve_schema5_0:cveId>
+  </cve_schema5_0:CVE>
+  <cc:CloudProvider rdf:about="http://birzeit.edu/CC#CloudProvider_Microsoft">
+    <cc:offerService>
+      <cloud:PaaS rdf:about="http://example.com/cloud#PaaS_MicrosoftAzureKubernetesService">
+        <cc:hasComponent>
+          <cc:ServiceComponent rdf:about="http://birzeit.edu/CC#ServiceComponent_Docker">
+            <cc:componentImpactedByCVE>
+              <cve_schema5_0:CVE rdf:about="http://birzeit.edu/cve_schema5_0#CVE_CVE-2019-5736"/>
+            </cc:componentImpactedByCVE>
+            <owl:sameAs>
+              <cve_schema5_0:Product rdf:about="http://birzeit.edu/cve_schema5_0#Product_Docker"/>
+            </owl:sameAs>
+          </cc:ServiceComponent>
+        </cc:hasComponent>
+        <cc:hasComponent>
+          <cc:ServiceComponent rdf:about="http://birzeit.edu/CC#ServiceComponent_MicrosoftAzureKubernetesService">
+            <cc:componentImpactedByCVE>
+              <cve_schema5_0:CVE rdf:about="http://birzeit.edu/cve_schema5_0#CVE_CVE-2021-24109"/>
+            </cc:componentImpactedByCVE>
+            <owl:sameAs>
+              <cve_schema5_0:Product rdf:about="http://birzeit.edu/cve_schema5_0#Product_MicrosoftAzureKubernetesService"/>
+            </owl:sameAs>
+          </cc:ServiceComponent>
+        </cc:hasComponent>
+      </cloud:PaaS>
+    </cc:offerService>
+    <owl:sameAs>
+      <cve_schema5_0:ProductVendor rdf:about="http://birzeit.edu/cve_schema5_0#ProductVendor_Microsoft"/>
+    </owl:sameAs>
+  </cc:CloudProvider>
+</rdf:RDF>

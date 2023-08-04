@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.grsu.by/net/OdTMBaseThreatModel" uri="OdTMBaseThreatModel.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://birzeit.edu/CC" uri="CC_Ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://birzeit.edu/cve_schema5_0" uri="CVE_Ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://birzeit.edu/logging_schema" uri="loggingSchema.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://example.com/logging-ontology#" uri="loogingData.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://example.org/cve_schema" uri="CVE_OntologyV7.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://www.grsu.by/net/OdTMIntegratedModel" uri="OdTMIntegratedModelXmlFormat.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://www.w3.org/2002/07/owl" uri="CloudServiceModelV2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1691170733620" name="http://www.w3.org/2002/07/owl#" uri="CloudServiceModel.owl"/>
+    </group>
+</catalog>

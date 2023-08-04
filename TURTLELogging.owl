@@ -1,0 +1,187 @@
+@prefix :       <http://birzeit.edu/CC#> .
+@prefix cc:     <http://birzeit.edu/CC#> .
+@prefix cloud:  <http://example.com/cloud#> .
+@prefix logont: <http://birzeit.edu/logging_schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+logont:SEC_ALERT  rdf:type  logont:LogLevel .
+
+cc:CloudProvider_Amazon
+        rdf:type  owl:NamedIndividual .
+
+cc:CloudProvider_Oracle
+        rdf:type  owl:NamedIndividual .
+
+<http://birzeit.edu/CC>
+        rdf:type     owl:Ontology ;
+        owl:imports  <file:///C:/M.kharma_data/PhD/03-Semester-2022/Threat-modeling/OdTM-mkharma/CloudServiceModelV2.owl> , <file:///C:/M.kharma_data/PhD/03-Semester-2022/Threat-modeling/OdTM-mkharma/loggingSchema.owl> , <file:///C:/M.kharma_data/PhD/03-Semester-2022/Threat-modeling/OdTM-mkharma/CVE_OntologyV2.owl> .
+
+logont:DEBUG  rdf:type  logont:LogLevel .
+
+cloud:Servers_Azure_EC2
+        rdf:type  owl:NamedIndividual .
+
+<http://dbpedia.org/ontology/company>
+        rdf:type  owl:Class .
+
+cc:CloudProvider_Microsoft
+        rdf:type          cc:CloudProvider , owl:NamedIndividual ;
+        cc:OfferServices  cloud:Azure_VirtualMachines , cloud:Azure_AppService , cloud:AWS_EC2 , cc:Azure_Desktop .
+
+logont:ERROR  rdf:type  logont:LogLevel .
+
+cc:Function_as_a_Service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:PaaS .
+
+logont:Catalina  rdf:type  logont:Logger .
+
+cc:CloudProvider  rdf:type  owl:Class ;
+        rdfs:subClassOf  <http://dbpedia.org/ontology/company> .
+
+logont:04e16473-f8bf-4443-a313-8d0ecf9f9b86
+        rdf:type             logont:LogEntry ;
+        logont:hasLevel      logont:SEC_ALERT ;
+        logont:hasLogger     logont:Catalina ;
+        logont:hasMessage    "[SEC_ALERT] [Catalina] unauthorized access attempt from 84.66.24.145." ;
+        logont:hasTimestamp  "[2023-06-30 10:30:04]" .
+
+cloud:Data_Azure_RDMS
+        rdf:type  owl:NamedIndividual .
+
+cloud:Storage_Azure_S3
+        rdf:type  owl:NamedIndividual .
+
+cloud:Application  rdfs:comment  "The application component provided in the Software as a Service (SaaS) model" ;
+        rdfs:label    "Application" .
+
+logont:hasTimestamp  rdf:type  owl:DatatypeProperty .
+
+logont:INFO  rdf:type  logont:LogLevel .
+
+logont:Logger  rdf:type  owl:Class .
+
+cloud:OperatingSystem
+        rdfs:comment  "The operating system component provided in the Platform as a Service (PaaS) model" ;
+        rdfs:label    "Operating System" .
+
+cc:Communication_as_a_service_Azure_VPN
+        rdf:type        cc:Communication_as_a_service , owl:NamedIndividual ;
+        rdfs:comment    "DaaS provider offering networking" ;
+        rdfs:label      "Microsoft Azure VPN" ;
+        cloud:provides  cloud:Networking_Azure_VLAN .
+
+logont:hasLevel  rdf:type  owl:ObjectProperty .
+
+cc:OfferServices  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  cc:CloudProvider ;
+        rdfs:range   cloud:ServiceModel .
+
+cloud:Networking  rdfs:comment  "The networking component provided in the Infrastructure as a Service (IaaS) model" ;
+        rdfs:label    "Networking" .
+
+cc:Azure_Desktop  rdf:type  cc:Desktop_as_a_service , owl:NamedIndividual ;
+        rdfs:comment    "DaaS provider offering data and application,Middleware,OperatingSystem,Runtime,networking, storage, servers, and virtualization" ;
+        rdfs:label      "Microsoft Azure Desktop" ;
+        cloud:provides  cloud:Middleware_Azure_Kafka , cloud:Runtime_Azure_Java , cloud:Application_Azure_RDP , cloud:Networking_Azure_VLAN , cloud:OperatingSystem_Azure_Linux , cloud:Data_Azure_RDMS , cloud:Storage_Azure_S3 , cloud:Virtualization_Azure_HyperVisure , cloud:Servers_Azure_EC2 .
+
+cloud:Runtime_Azure_Java
+        rdf:type  owl:NamedIndividual .
+
+cloud:Runtime  rdfs:comment  "The runtime component provided in the Platform as a Service (PaaS) model" ;
+        rdfs:label    "Runtime" .
+
+cloud:Virtualization  rdfs:comment  "The virtualization component provided in the Infrastructure as a Service (IaaS) model" ;
+        rdfs:label    "Virtualization" .
+
+cloud:OperatingSystem_Azure_Linux
+        rdf:type  owl:NamedIndividual .
+
+logont:a93b549a-8b7c-4e22-9e43-9b2547f1a47b
+        rdf:type             logont:LogEntry ;
+        logont:hasLevel      logont:INFO ;
+        logont:hasLogger     logont:Catalina ;
+        logont:hasMessage    "[INFO] [Catalina] MOhammed Kharama is a testing, This is an informational log message." ;
+        logont:hasTimestamp  "[2023-06-30 10:30:00]" .
+
+cc:Communication_as_a_service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:ServiceModel .
+
+logont:92b187e6-dfa7-4b75-9164-2b2c10b26f89
+        rdf:type             logont:LogEntry ;
+        logont:hasLevel      logont:DEBUG ;
+        logont:hasLogger     logont:Catalina ;
+        logont:hasMessage    "[DEBUG] [Catalina] memory swap is critical." ;
+        logont:hasTimestamp  "[2023-06-30 10:30:02]" .
+
+logont:hasMessage  rdf:type  owl:DatatypeProperty .
+
+logont:cad5b0e2-19fc-471b-a0a4-a750d76e7698
+        rdf:type             logont:LogEntry ;
+        logont:hasLevel      logont:ERROR ;
+        logont:hasLogger     logont:Catalina_Base ;
+        logont:hasMessage    "[ERROR] [Catalina_Base] Server Java heap memory exceeded." ;
+        logont:hasTimestamp  "[2023-06-30 10:30:01]" .
+
+cloud:provides  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  cloud:ServiceModel ;
+        rdfs:label   "provides" ;
+        rdfs:range   cloud:Servers , cloud:Application , cloud:Networking , cloud:Data , cloud:Virtualization , cloud:Middleware , cloud:OperatingSystem , cloud:Storage , cloud:Runtime .
+
+logont:LogLevel  rdf:type  owl:Class .
+
+cloud:Data  rdfs:comment  "The data component provided in the Software as a Service (SaaS) model" ;
+        rdfs:label    "Data" .
+
+cc:Desktop_as_a_service
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  cloud:SaaS .
+
+logont:hasLogger  rdf:type  owl:ObjectProperty .
+
+logont:WARNING  rdf:type  logont:LogLevel .
+
+logont:LogEntry  rdf:type  owl:Class .
+
+cloud:Middleware_Azure_Kafka
+        rdf:type  owl:NamedIndividual .
+
+cloud:Servers  rdfs:comment  "The servers component provided in the Infrastructure as a Service (IaaS) model" ;
+        rdfs:label    "Servers" .
+
+cloud:Networking_Azure_VLAN
+        rdf:type  owl:NamedIndividual .
+
+cc:Function_as_a_Service_Lamda
+        rdf:type        cc:Function_as_a_Service , owl:NamedIndividual ;
+        rdfs:comment    "DaaS provider offering data and application,Middleware,OperatingSystem,Runtime,networking, storage, servers, and virtualization" ;
+        rdfs:label      "Microsoft Azure Desktop" ;
+        cloud:provides  cloud:Virtualization_Azure_HyperVisure , cloud:Middleware_Azure_Kafka , cloud:Networking_Azure_VLAN , cloud:OperatingSystem_Azure_Linux , cloud:Runtime_Azure_Java , cloud:Storage_Azure_S3 , cloud:Servers_Azure_EC2 .
+
+cloud:Middleware  rdfs:comment  "The middleware component provided in the Platform as a Service (PaaS) model" ;
+        rdfs:label    "Middleware" .
+
+logont:2cfcd3f1-a71a-4bb6-8129-7fdd19debaf8
+        rdf:type             logont:LogEntry ;
+        logont:hasLevel      logont:WARNING ;
+        logont:hasLogger     logont:Catalina_Base ;
+        logont:hasMessage    "[WARNING] [Catalina_Base] Dropping rate is increased, increase number of instances." ;
+        logont:hasTimestamp  "[2023-06-30 10:30:03]" .
+
+cloud:Storage  rdfs:comment  "The storage component provided in the Infrastructure as a Service (IaaS) model" ;
+        rdfs:label    "Storage" .
+
+logont:Catalina_Base  rdf:type  logont:Logger .
+
+cloud:Application_Azure_RDP
+        rdf:type  owl:NamedIndividual .
+
+cloud:Virtualization_Azure_HyperVisure
+        rdf:type  owl:NamedIndividual .
+
+cc:CloudProvider_Google
+        rdf:type  owl:NamedIndividual .

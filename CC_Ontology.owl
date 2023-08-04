@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://birzeit.edu/CC#"
+     xml:base="http://birzeit.edu/CC"
+     xmlns:cc="http://birzeit.edu/CC#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cloud="http://example.com/cloud#"
+     xmlns:cve_schema5_0="http://birzeit.edu/cve_schema5_0#">
+    <owl:Ontology rdf:about="http://birzeit.edu/CC">
+        <owl:imports rdf:resource="file:///C:/M.kharma_data/PhD/04-Fall-Semester-2023/Dataengineering/cc-ontology/CVE_OntologyV7.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/CC#OfferServices -->
+
+    <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#OfferServices">
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#CloudProvider"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:label>offerService</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://birzeit.edu/CC#componentImpactedByCVE -->
+
+    <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#componentImpactedByCVE">
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+        <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#CVE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://birzeit.edu/CC#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://birzeit.edu/CC#hasComponent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#Communication_as_a_service"/>
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#Desktop_as_a_service"/>
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#Function_as_a_Service"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#IaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#PaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#SaaS"/>
+        <rdfs:range rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/cloud#provides -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/cloud#provides">
+        <rdfs:domain rdf:resource="http://example.com/cloud#IaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#PaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#SaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Application"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Data"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Middleware"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Networking"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Runtime"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Servers"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Storage"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Virtualization"/>
+        <rdfs:label>provides</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="http://birzeit.edu/CC#ServiceComponent"/>
+        <rdfs:range rdf:resource="http://birzeit.edu/cve_schema5_0#CVE"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://birzeit.edu/CC#CloudProvider -->
+
+    <owl:Class rdf:about="http://birzeit.edu/CC#CloudProvider">
+        <owl:equivalentClass rdf:resource="http://birzeit.edu/cve_schema5_0#ProductVendor"/>
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/CC#Communication_as_a_service -->
+
+    <owl:Class rdf:about="http://birzeit.edu/CC#Communication_as_a_service">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/CC#Desktop_as_a_service -->
+
+    <owl:Class rdf:about="http://birzeit.edu/CC#Desktop_as_a_service">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/CC#Function_as_a_Service -->
+
+    <owl:Class rdf:about="http://birzeit.edu/CC#Function_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://birzeit.edu/CC#ServiceComponent -->
+
+    <owl:Class rdf:about="http://birzeit.edu/CC#ServiceComponent">
+        <owl:equivalentClass rdf:resource="http://birzeit.edu/cve_schema5_0#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/company -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/company"/>
+    
+
+
+    <!-- http://example.com/cloud#Application -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Application"/>
+    
+
+
+    <!-- http://example.com/cloud#Data -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Data"/>
+    
+
+
+    <!-- http://example.com/cloud#IaaS -->
+
+    <owl:Class rdf:about="http://example.com/cloud#IaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model where the provisioning of virtualized resources (computation, storage, and communication) happens on demand</rdfs:comment>
+        <rdfs:label>Infrastructure as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/cloud#Middleware -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Middleware"/>
+    
+
+
+    <!-- http://example.com/cloud#Networking -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Networking"/>
+    
+
+
+    <!-- http://example.com/cloud#OperatingSystem -->
+
+    <owl:Class rdf:about="http://example.com/cloud#OperatingSystem"/>
+    
+
+
+    <!-- http://example.com/cloud#PaaS -->
+
+    <owl:Class rdf:about="http://example.com/cloud#PaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model that offers consumers a development platform so they may create and maintain their applications and cloud-specific utilities</rdfs:comment>
+        <rdfs:label>Platform as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/cloud#Runtime -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Runtime"/>
+    
+
+
+    <!-- http://example.com/cloud#SaaS -->
+
+    <owl:Class rdf:about="http://example.com/cloud#SaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model referring to the top level of the cloud stack where applications reside</rdfs:comment>
+        <rdfs:label>Software as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/cloud#Servers -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Servers"/>
+    
+
+
+    <!-- http://example.com/cloud#ServiceModel -->
+
+    <owl:Class rdf:about="http://example.com/cloud#ServiceModel">
+        <rdfs:comment>The base class for different cloud service models</rdfs:comment>
+        <rdfs:label>Service Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/cloud#Storage -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Storage"/>
+    
+
+
+    <!-- http://example.com/cloud#Virtualization -->
+
+    <owl:Class rdf:about="http://example.com/cloud#Virtualization"/>
+    
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

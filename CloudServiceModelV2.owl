@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cloud="http://example.com/cloud#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/cloud#provides -->
+
+    <ObjectProperty rdf:about="http://example.com/cloud#provides">
+        <rdfs:domain rdf:resource="http://example.com/cloud#IaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#PaaS"/>
+        <rdfs:domain rdf:resource="http://example.com/cloud#SaaS"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Application"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Data"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Middleware"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Networking"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Runtime"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Servers"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Storage"/>
+        <rdfs:range rdf:resource="http://example.com/cloud#Virtualization"/>
+        <rdfs:label>provides</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/cloud#Application -->
+
+    <Class rdf:about="http://example.com/cloud#Application"/>
+    
+
+
+    <!-- http://example.com/cloud#Data -->
+
+    <Class rdf:about="http://example.com/cloud#Data"/>
+    
+
+
+    <!-- http://example.com/cloud#IaaS -->
+
+    <Class rdf:about="http://example.com/cloud#IaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model where the provisioning of virtualized resources (computation, storage, and communication) happens on demand</rdfs:comment>
+        <rdfs:label>Infrastructure as a Service</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/cloud#Middleware -->
+
+    <Class rdf:about="http://example.com/cloud#Middleware"/>
+    
+
+
+    <!-- http://example.com/cloud#Networking -->
+
+    <Class rdf:about="http://example.com/cloud#Networking"/>
+    
+
+
+    <!-- http://example.com/cloud#OperatingSystem -->
+
+    <Class rdf:about="http://example.com/cloud#OperatingSystem"/>
+    
+
+
+    <!-- http://example.com/cloud#PaaS -->
+
+    <Class rdf:about="http://example.com/cloud#PaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model that offers consumers a development platform so they may create and maintain their applications and cloud-specific utilities</rdfs:comment>
+        <rdfs:label>Platform as a Service</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/cloud#Runtime -->
+
+    <Class rdf:about="http://example.com/cloud#Runtime"/>
+    
+
+
+    <!-- http://example.com/cloud#SaaS -->
+
+    <Class rdf:about="http://example.com/cloud#SaaS">
+        <rdfs:subClassOf rdf:resource="http://example.com/cloud#ServiceModel"/>
+        <rdfs:comment>A cloud service model referring to the top level of the cloud stack where applications reside</rdfs:comment>
+        <rdfs:label>Software as a Service</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/cloud#Servers -->
+
+    <Class rdf:about="http://example.com/cloud#Servers"/>
+    
+
+
+    <!-- http://example.com/cloud#ServiceModel -->
+
+    <Class rdf:about="http://example.com/cloud#ServiceModel">
+        <rdfs:comment>The base class for different cloud service models</rdfs:comment>
+        <rdfs:label>Service Model</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/cloud#Storage -->
+
+    <Class rdf:about="http://example.com/cloud#Storage"/>
+    
+
+
+    <!-- http://example.com/cloud#Virtualization -->
+
+    <Class rdf:about="http://example.com/cloud#Virtualization"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/cloud#AWS_EC2 -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#AWS_EC2">
+        <rdf:type rdf:resource="http://example.com/cloud#IaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Networking"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Servers"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Storage"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Virtualization"/>
+        <rdfs:comment>IaaS provider offering networking, storage, servers, and virtualization</rdfs:comment>
+        <rdfs:label>Amazon Web Services (AWS) Elastic Compute Cloud (EC2)</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Application -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Application"/>
+    
+
+
+    <!-- http://example.com/cloud#Azure_AppService -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Azure_AppService">
+        <rdf:type rdf:resource="http://example.com/cloud#PaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Middleware"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#OperatingSystem"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Runtime"/>
+        <rdfs:comment>PaaS provider offering operating system, middleware, and runtime</rdfs:comment>
+        <rdfs:label>Microsoft Azure App Service</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Azure_VirtualMachines -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Azure_VirtualMachines">
+        <rdf:type rdf:resource="http://example.com/cloud#IaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Networking"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Servers"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Storage"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Virtualization"/>
+        <rdfs:comment>IaaS provider offering networking, storage, servers, and virtualization</rdfs:comment>
+        <rdfs:label>Microsoft Azure Virtual Machines</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Data -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Data"/>
+    
+
+
+    <!-- http://example.com/cloud#Google_AppEngine -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Google_AppEngine">
+        <rdf:type rdf:resource="http://example.com/cloud#PaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Middleware"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#OperatingSystem"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Runtime"/>
+        <rdfs:comment>PaaS provider offering operating system, middleware, and runtime</rdfs:comment>
+        <rdfs:label>Google App Engine</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Google_Workspace -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Google_Workspace">
+        <rdf:type rdf:resource="http://example.com/cloud#SaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Application"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Data"/>
+        <rdfs:comment>SaaS provider offering data and application</rdfs:comment>
+        <rdfs:label>Google Workspace</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Heroku -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Heroku">
+        <rdf:type rdf:resource="http://example.com/cloud#PaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Middleware"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#OperatingSystem"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Runtime"/>
+        <rdfs:comment>PaaS provider offering operating system, middleware, and runtime</rdfs:comment>
+        <rdfs:label>Heroku</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Microsoft_Office365 -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Microsoft_Office365">
+        <rdf:type rdf:resource="http://example.com/cloud#SaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Application"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Data"/>
+        <rdfs:comment>SaaS provider offering data and application</rdfs:comment>
+        <rdfs:label>Microsoft Office 365</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Middleware -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Middleware"/>
+    
+
+
+    <!-- http://example.com/cloud#Networking -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Networking"/>
+    
+
+
+    <!-- http://example.com/cloud#OperatingSystem -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#OperatingSystem"/>
+    
+
+
+    <!-- http://example.com/cloud#Runtime -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Runtime"/>
+    
+
+
+    <!-- http://example.com/cloud#Salesforce -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Salesforce">
+        <rdf:type rdf:resource="http://example.com/cloud#SaaS"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Application"/>
+        <cloud:provides rdf:resource="http://example.com/cloud#Data"/>
+        <rdfs:comment>SaaS provider offering data and application</rdfs:comment>
+        <rdfs:label>Salesforce</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.com/cloud#Servers -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Servers"/>
+    
+
+
+    <!-- http://example.com/cloud#Storage -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Storage"/>
+    
+
+
+    <!-- http://example.com/cloud#Virtualization -->
+
+    <NamedIndividual rdf:about="http://example.com/cloud#Virtualization"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.com/cloud#Application">
+        <rdfs:label>Application</rdfs:label>
+        <rdfs:comment>The application component provided in the Software as a Service (SaaS) model</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Data">
+        <rdfs:comment>The data component provided in the Software as a Service (SaaS) model</rdfs:comment>
+        <rdfs:label>Data</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Middleware">
+        <rdfs:comment>The middleware component provided in the Platform as a Service (PaaS) model</rdfs:comment>
+        <rdfs:label>Middleware</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Networking">
+        <rdfs:comment>The networking component provided in the Infrastructure as a Service (IaaS) model</rdfs:comment>
+        <rdfs:label>Networking</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#OperatingSystem">
+        <rdfs:label>Operating System</rdfs:label>
+        <rdfs:comment>The operating system component provided in the Platform as a Service (PaaS) model</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Runtime">
+        <rdfs:comment>The runtime component provided in the Platform as a Service (PaaS) model</rdfs:comment>
+        <rdfs:label>Runtime</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Servers">
+        <rdfs:comment>The servers component provided in the Infrastructure as a Service (IaaS) model</rdfs:comment>
+        <rdfs:label>Servers</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Storage">
+        <rdfs:label>Storage</rdfs:label>
+        <rdfs:comment>The storage component provided in the Infrastructure as a Service (IaaS) model</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com/cloud#Virtualization">
+        <rdfs:label>Virtualization</rdfs:label>
+        <rdfs:comment>The virtualization component provided in the Infrastructure as a Service (IaaS) model</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
